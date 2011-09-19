@@ -1,0 +1,18 @@
+#+title: ART 4 Radkowski
+#+startup: hidestars
+
+* Next actions
+:PROPERTIES:
+:CATEGORY: ART
+:END:
+** DONE ¦ci±gnij materia³y.
+** TODO Poczytaj materia³y.
+** TODO Poczytaj ¶ci±gniête ¼ród³a kolegów RE jak zbudowali ART.
+** TODO Wymy¶l jakie¶ zastosowanie ART, które bêdziemy rozwijaæ.
+** TODO Repo na Githubie.
+
+* Reference
+
+  http://www.learnartificialneuralnetworks.com/art.html#art1original
+  http://www.cs.csi.cuny.edu/~natacha/TeachFall_2008/GradCenter/StudentProjects/Final/Presentation.ppt
+  http://www.neural-networks-at-your-fingertips.com/art1.html
