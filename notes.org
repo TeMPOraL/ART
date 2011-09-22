@@ -6,9 +6,10 @@
 :CATEGORY: ART
 :END:
 ** DONE ¦ci±gnij materia³y.
-** TODO Poczytaj materia³y.
-** TODO Poczytaj ¶ci±gniête ¼ród³a kolegów RE jak zbudowali ART.
-** TODO Wymy¶l jakie¶ zastosowanie ART, które bêdziemy rozwijaæ.
+** DONE Poczytaj materia³y.
+** DONE Poczytaj ¶ci±gniête ¼ród³a kolegów RE jak zbudowali ART.
+** DONE Wymy¶l jakie¶ zastosowanie ART, które bêdziemy rozwijaæ.
+   Literki bêdziemy parsowaæ.
 ** DONE Repo na Githubie.
 
 * Reference
