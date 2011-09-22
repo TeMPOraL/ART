@@ -54,14 +54,32 @@
   (vector-push-extend *top-down-weights* match)
   (vector-push-extend *bottom-up-weights* match)) ;; FIXME copy? and find out how/what by to extend?
 
+(defun should-reset-p (activation-sum input-sum vigilance)
+  "Predicate that tells us whether we should have RESET signal - that is, whether given neuron should be rejected."
+  (< (/ activation-sum input-sum) vigilance))
+
+(defun select-best-matching-neuron (neurons input)
+  "Select the best matching neuron. If none found, make one. Returns
+  ID of a top-layer neuron."
+  ;; TODO
+  ;; NOTE Adding neuron will require figuring out the weights.
+  42)
+
+(defun update-weigths (best-neuron)
+  "Update weights for given neuron."
+  'fixme)
+
 
 ;;; high-level interface functions
 (defun reset-ART ()
   (init-ART))
 
 (defun train-ART (training-set-id))
+;;; NOTE FIXME there are some places I forgot to make sure I copy
+;;; arrays. Look out for those places.
 
 (defun run-art-on-input (input)
+  "Run ART on input; return the cluster ID to which the input was classified."
   ;; ART magic algorithm
   (let* ((input-sum (reduce #'+ input))
          ;; top-layer-reaction aka. f2.
@@ -73,23 +91,22 @@
          ;; a corresponding information about which neuron is which.
          (neurons (sort (tag-list-with-indices (coerce top-layer-reaction 'list))
                         #'>
-                        :key #'cdr)))
+                        :key #'cdr))
+         (best-matching (select-best-matching-neuron neurons input)))
     
     ;; Now that we have the above, we need to iterate over `neurons',
     ;; checking each one if it crosses the activation threshold; if it
     ;; does, we update weights; if it doesn't, we add a new one (and
     ;; set up weights).
-    (loop for neuron in neurons
-       for activation-sum = (dot-product input (elt *top-down-weights* (car neuron)))
-       ;; foo
-         
-       ;; if (not (should-reset-p activation-sum input-sum)) break
-       ;; loop. I need to detect if we run out of entries in the
-       ;; list - if so, we need to add a new cluster.
-         )
-
-
-)
+    ;; (loop for neuron in neurons
+    ;;   for activation-sum = (dot-product input (elt *top-down-weights* (car neuron)))
+    ;; foo
+    
+    ;; if (not (should-reset-p activation-sum input-sum)) break
+    ;; loop. I need to detect if we run out of entries in the
+    ;; list - if so, we need to add a new cluster.
+    (update-weigths best-matching)      ; <-- TODO
+    best-matching))
   
   ;; preparations
 
